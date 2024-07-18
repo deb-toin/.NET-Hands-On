@@ -41,6 +41,34 @@ namespace Basic_ASPNET_API_example.Controllers
             return petshopItem;
         }
 
+        // GET: api/PetshopItems/5
+        [HttpGet("/name/{name}")]
+        public async Task<ActionResult<PetshopItem>> GetPetshopItemByName(string name)
+        {
+            var petshopItem = await _context.PetshopItems.Where(b => b.Name.Contains($"{name}")).ToListAsync();
+
+            if (petshopItem == null)
+            {
+                return NotFound();
+            }
+            
+            return Ok(petshopItem);
+        }
+
+        // GET: api/PetshopItems/5
+        [HttpGet("/spec/{species}")]
+        public async Task<ActionResult<PetshopItem>> GetPetshopItemBySpec(string species)
+        {
+            var petshopItem = await _context.PetshopItems.Where(b => b.Species.Contains($"{species}")).ToListAsync();
+
+            if (petshopItem == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(petshopItem);
+        }
+
         // PUT: api/PetshopItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
