@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PetshopApi.Models;
@@ -14,12 +9,10 @@ namespace Basic_ASPNET_API_example.Controllers
     public class PetshopItemsController : ControllerBase
     {
         private readonly PetshopContext _context;
-
         public PetshopItemsController(PetshopContext context)
         {
             _context = context;
         }
-
         // GET: api/PetshopItems
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PetshopItem>>> GetPetshopItems()
@@ -37,35 +30,46 @@ namespace Basic_ASPNET_API_example.Controllers
             {
                 return NotFound();
             }
-
             return petshopItem;
         }
 
-        // GET: api/PetshopItems/5
+        // GET: api/PetshopItems/name/Snoopy
         [HttpGet("/name/{name}")]
         public async Task<ActionResult<PetshopItem>> GetPetshopItemByName(string name)
         {
             var petshopItem = await _context.PetshopItems.Where(b => b.Name.Contains($"{name}")).ToListAsync();
 
-            if (petshopItem == null)
+            if (petshopItem.Count == 0)
             {
-                return NotFound();
+                return NotFound($"No {name} was welcomed here");
             }
             
             return Ok(petshopItem);
         }
 
-        // GET: api/PetshopItems/5
+        // GET: api/PetshopItems/spec/Dog
         [HttpGet("/spec/{species}")]
         public async Task<ActionResult<PetshopItem>> GetPetshopItemBySpec(string species)
         {
             var petshopItem = await _context.PetshopItems.Where(b => b.Species.Contains($"{species}")).ToListAsync();
 
-            if (petshopItem == null)
+            if (petshopItem.Count == 0)
             {
-                return NotFound();
+                return NotFound($"No {species} are listed at this moment");
             }
 
+            return Ok(petshopItem);
+        }
+
+        // GET: api/PetshopItems/toBeAdopted
+        [HttpGet("/toBeAdopted")]
+        public async Task<ActionResult<PetshopItem>> GetPetshopItemNonAdopted()
+        {
+            var petshopItem = await _context.PetshopItems.Where(b => b.IsAdopted == false).ToListAsync();
+            if (petshopItem.Count == 0)
+            {
+                return NotFound("Yay everyone has been adopted !");
+            }
             return Ok(petshopItem);
         }
 

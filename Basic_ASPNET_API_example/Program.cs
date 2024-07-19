@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using PetshopApi.Models;
+using ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole());
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddDbContext<PetshopContext>(opt =>
     opt.UseInMemoryDatabase("PetshopList"));

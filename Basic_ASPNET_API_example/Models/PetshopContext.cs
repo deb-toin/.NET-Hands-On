@@ -8,6 +8,5 @@ public class PetshopContext : DbContext
         : base(options)
     {
     }
-
     public DbSet<PetshopItem> PetshopItems { get; set; } = null!;
 }
