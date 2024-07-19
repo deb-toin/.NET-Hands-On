@@ -13,6 +13,7 @@ namespace Basic_ASPNET_API_example.Controllers
         {
             _context = context;
         }
+
         // GET: api/PetshopItems
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PetshopItem>>> GetPetshopItems()
@@ -80,9 +81,24 @@ namespace Basic_ASPNET_API_example.Controllers
         {
             if (id != petshopItem.Id)
             {
-                return BadRequest();
+                return BadRequest("You have to provide an id.");
             }
-
+            if (petshopItem.Name == ""){
+                ModelState.AddModelError("petshopItem.Name","You have to provide a name.");
+                return BadRequest("You have to provide a name.");
+            }
+            if (petshopItem.Species == ""){
+                ModelState.AddModelError("petshopItem.Species","You have to provide a species.");
+                return BadRequest("You have to provide a species.");
+            }
+            if (petshopItem.Pedigree == ""){
+                ModelState.AddModelError("petshopItem.Pedigree","You have to provide a pedigree/race.");
+                return BadRequest("You have to provide a pedigree/race.");
+            }
+            if (petshopItem.Colour == ""){
+                ModelState.AddModelError("petshopItem.Colour","You have to provide a fur/skin/feather colour.");
+                return BadRequest("You have to provide a fur/skin/feather colour.");
+            }
             _context.Entry(petshopItem).State = EntityState.Modified;
 
             try
@@ -93,7 +109,7 @@ namespace Basic_ASPNET_API_example.Controllers
             {
                 if (!PetshopItemExists(id))
                 {
-                    return NotFound();
+                    return NotFound($"No animal found under id {id}");
                 }
                 else
                 {
@@ -108,7 +124,23 @@ namespace Basic_ASPNET_API_example.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<PetshopItem>> PostPetshopItem(PetshopItem petshopItem)
-        {          
+        {
+            if (petshopItem.Name == ""){
+                ModelState.AddModelError("petshopItem.Name","You have to provide a name.");
+                return BadRequest("You have to provide a name.");
+            }
+            if (petshopItem.Species == ""){
+                ModelState.AddModelError("petshopItem.Species","You have to provide a species.");
+                return BadRequest("You have to provide a species.");
+            }
+            if (petshopItem.Pedigree == ""){
+                ModelState.AddModelError("petshopItem.Pedigree","You have to provide a pedigree/race.");
+                return BadRequest("You have to provide a pedigree/race.");
+            }
+            if (petshopItem.Colour == ""){
+                ModelState.AddModelError("petshopItem.Colour","You have to provide a fur/skin/feather colour.");
+                return BadRequest("You have to provide a fur/skin/feather colour.");
+            }
             _context.PetshopItems.Add(petshopItem);
             await _context.SaveChangesAsync();
 
