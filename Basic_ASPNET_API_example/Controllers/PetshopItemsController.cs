@@ -15,7 +15,7 @@ namespace Basic_ASPNET_API_example.Controllers
         }
 
         // GET: api/PetshopItems
-        [HttpGet]
+        [HttpGet("/list")]
         public async Task<ActionResult<IEnumerable<PetshopItem>>> GetPetshopItems()
         {
             return await _context.PetshopItems.ToListAsync();
@@ -29,7 +29,7 @@ namespace Basic_ASPNET_API_example.Controllers
 
             if (petshopItem == null)
             {
-                return NotFound();
+                return NotFound($"No animal with {id} was found");
             }
             return petshopItem;
         }
@@ -38,7 +38,7 @@ namespace Basic_ASPNET_API_example.Controllers
         [HttpGet("/name/{name}")]
         public async Task<ActionResult<PetshopItem>> GetPetshopItemByName(string name)
         {
-            var petshopItem = await _context.PetshopItems.Where(b => b.Name.Contains($"{name}")).ToListAsync();
+            var petshopItem = await _context.PetshopItems.Where(b => b.Name.Equals($"{name}")).ToListAsync();
 
             if (petshopItem.Count == 0)
             {
@@ -49,10 +49,10 @@ namespace Basic_ASPNET_API_example.Controllers
         }
 
         // GET: api/PetshopItems/spec/Dog
-        [HttpGet("/spec/{species}")]
+        [HttpGet("/species/{species}")]
         public async Task<ActionResult<PetshopItem>> GetPetshopItemBySpec(string species)
         {
-            var petshopItem = await _context.PetshopItems.Where(b => b.Species.Contains($"{species}")).ToListAsync();
+            var petshopItem = await _context.PetshopItems.Where(b => b.Species.Equals($"{species}")).ToListAsync();
 
             if (petshopItem.Count == 0)
             {
@@ -154,13 +154,13 @@ namespace Basic_ASPNET_API_example.Controllers
             var petshopItem = await _context.PetshopItems.FindAsync(id);
             if (petshopItem == null)
             {
-                return NotFound();
+                return NotFound($"No animal found under id {id}");
             }
 
             _context.PetshopItems.Remove(petshopItem);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return NoContent($"id {id} deleted");
         }
 
         private bool PetshopItemExists(long id)
