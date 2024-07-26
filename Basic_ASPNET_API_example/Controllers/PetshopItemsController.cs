@@ -6,6 +6,7 @@ namespace Basic_ASPNET_API_example.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class PetshopItemsController : ControllerBase
     {
         private readonly PetshopContext _context;
@@ -22,7 +23,7 @@ namespace Basic_ASPNET_API_example.Controllers
         }
 
         // GET: api/PetshopItems/5
-        [HttpGet("{id}")]
+        [HttpGet("/getId/{id}")]
         public async Task<ActionResult<PetshopItem>> GetPetshopItem(long id)
         {
             var petshopItem = await _context.PetshopItems.FindAsync(id);
@@ -160,7 +161,7 @@ namespace Basic_ASPNET_API_example.Controllers
             _context.PetshopItems.Remove(petshopItem);
             await _context.SaveChangesAsync();
 
-            return NoContent($"id {id} deleted");
+            return NoContent();
         }
 
         private bool PetshopItemExists(long id)

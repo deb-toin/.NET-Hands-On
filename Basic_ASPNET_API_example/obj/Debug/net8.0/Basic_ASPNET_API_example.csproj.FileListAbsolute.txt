@@ -253,3 +253,9 @@
 /home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll
 /home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Windows.Extensions.dll
 /home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/bin/Debug/net8.0/System.Text.Json.dll
+/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/bin/Debug/net8.0/Basic_ASPNET_API_example.staticwebassets.runtime.json
+/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/obj/Debug/net8.0/Basic_ASPNET_API_example.RazorAssemblyInfo.cache
+/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/obj/Debug/net8.0/Basic_ASPNET_API_example.RazorAssemblyInfo.cs
+/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/obj/Debug/net8.0/scopedcss/Pages/Shared/_Layout.cshtml.rz.scp.css
+/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/obj/Debug/net8.0/scopedcss/projectbundle/Basic_ASPNET_API_example.bundle.scp.css
+/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/bin/Debug/net8.0/Pages/web.config

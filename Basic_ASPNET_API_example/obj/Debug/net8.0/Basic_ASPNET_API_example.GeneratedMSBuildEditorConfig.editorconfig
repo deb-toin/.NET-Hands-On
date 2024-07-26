@@ -25,3 +25,39 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = /home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example
 build_property._RazorSourceGeneratorDebug = 
+
+[/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/wwwroot/views/PetshopList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = d3d3cm9vdC92aWV3cy9QZXRzaG9wTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/Pages/PetshopList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGV0c2hvcExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/adebrue/.NET-Hands-On/Basic_ASPNET_API_example/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-5u9r79oxaz

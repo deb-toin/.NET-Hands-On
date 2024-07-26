@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using PetshopApi.Models;
 using ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole());
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<PetshopContext>(opt =>
     opt.UseInMemoryDatabase("PetshopList"));
@@ -21,9 +23,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
+app.UseStaticFiles();
 
 app.MapControllers();
+app.MapRazorPages();
 
 app.Run();
